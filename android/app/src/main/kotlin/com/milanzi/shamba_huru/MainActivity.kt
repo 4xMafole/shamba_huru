@@ -1,4 +1,4 @@
-package com.example.shamba_huru
+package com.milanzi.shamba_huru
 
 import io.flutter.embedding.android.FlutterActivity
 
