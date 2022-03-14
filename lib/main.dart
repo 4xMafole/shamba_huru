@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:shamba_huru/views/language_view.dart';
+import 'package:shamba_huru/views/login_view.dart';
 import 'package:shamba_huru/views/onboard_view.dart';
 
 void main() {
@@ -11,8 +14,9 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'Shamba Huru',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -25,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      home: const OnboardView(),
+      home: LanguageView(),
     );
   }
 }
