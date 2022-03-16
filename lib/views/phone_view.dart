@@ -43,16 +43,47 @@ class PhoneView extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 25.0),
-        Text(
-          _controller.phoneScreenHeaderlText,
-          style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                fontWeight: FontWeight.bold,
-                height: 1.4,
-                color: AppColor.pullmanBrown,
-              ),
+        Center(
+          child: Text(
+            _controller.phoneScreenHeaderlText,
+            style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                  fontWeight: FontWeight.bold,
+                  height: 1.4,
+                  color: AppColor.pullmanBrown,
+                ),
+          ),
         ),
         const SizedBox(height: 25.0),
         phoneForm(),
+        const SizedBox(
+          height: 25,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: <Widget>[
+            Text(
+              _controller.phoneScreenNotThisAuth,
+              style: Theme.of(context)
+                  .textTheme
+                  .bodyText2!
+                  .copyWith(color: AppColor.deepGreen),
+            ),
+            const SizedBox(
+              width: 10.0,
+            ),
+            GestureDetector(
+              onTap: () => Get.back(),
+              child: Text(
+                _controller.phoneScreenBack,
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyText2!
+                    .copyWith(color: AppColor.paleGreen),
+              ),
+            ),
+          ],
+        ),
       ],
     );
   }

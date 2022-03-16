@@ -14,6 +14,10 @@ class PhoneController extends GetxController {
   String phoneScreenHeaderlText =
       "Please enter your phone number to be registered";
 
+  String phoneScreenNotThisAuth = "Other Sign up ?";
+
+  String phoneScreenBack = "Options";
+
   void getPhoneNumber(String phoneNumber) async {
     PhoneNumber number =
         await PhoneNumber.getRegionInfoFromPhoneNumber(phoneNumber);

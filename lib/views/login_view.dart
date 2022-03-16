@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:shamba_huru/custom_widgets/login_button.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/utils/constant.dart';
+import 'package:shamba_huru/views/phone_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);
@@ -90,9 +92,12 @@ class LoginView extends StatelessWidget {
                 text: 'SIGN IN WITH FACEBOOK',
                 icon: "assets/icons/facebook.svg",
               ),
-              LoginButtonWidget(
-                text: 'SIGN IN WITH PHONE NUMBER',
-                icon: "assets/icons/phone.svg",
+              InkWell(
+                onTap: () => Get.to(PhoneView()),
+                child: LoginButtonWidget(
+                  text: 'SIGN IN WITH PHONE NUMBER',
+                  icon: "assets/icons/phone.svg",
+                ),
               ),
               const SizedBox(height: 20),
               const Text(

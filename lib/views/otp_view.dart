@@ -58,14 +58,16 @@ class OtpView extends StatelessWidget {
         // Vertical space
         const SizedBox(height: 25.0),
         // Main text: Enter 6 digit code ...
-        Text(
-          // Replace text with Get.arguments or from variable: wahtever your use case
-          _controller.otpScreenHeaderlText + " +255...05",
-          style: Theme.of(context).textTheme.bodyText1!.copyWith(
-                fontWeight: FontWeight.bold,
-                height: 1.4,
-                color: AppColor.pullmanBrown,
-              ),
+        Center(
+          child: Text(
+            // Replace text with Get.arguments or from variable: wahtever your use case
+            _controller.otpScreenHeaderlText + " +255...05",
+            style: Theme.of(context).textTheme.bodyText1!.copyWith(
+                  fontWeight: FontWeight.bold,
+                  height: 1.4,
+                  color: AppColor.pullmanBrown,
+                ),
+          ),
         ),
         // Vertical space
         const SizedBox(height: 25.0),
