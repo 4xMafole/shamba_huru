@@ -5,7 +5,7 @@ import 'package:get/get.dart';
 import 'package:shamba_huru/custom_widgets/login_button.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/utils/constant.dart';
-import 'package:shamba_huru/views/phone_view.dart';
+import 'package:shamba_huru/views/authentication/phone_view.dart';
 
 class LoginView extends StatelessWidget {
   const LoginView({Key? key}) : super(key: key);

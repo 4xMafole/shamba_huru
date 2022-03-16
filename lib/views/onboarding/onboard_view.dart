@@ -3,7 +3,7 @@ import 'package:flutter_onboard/flutter_onboard.dart';
 import 'package:get/get.dart';
 import 'package:shamba_huru/controllers/onboard_controller.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
-import 'package:shamba_huru/views/login_view.dart';
+import 'package:shamba_huru/views/authentication/login_view.dart';
 
 class OnboardView extends StatelessWidget {
   OnboardView({Key? key}) : super(key: key);

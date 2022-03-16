@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:shamba_huru/controllers/phone_controller.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
-import 'package:shamba_huru/views/otp_view.dart';
+import 'package:shamba_huru/views/authentication/otp_view.dart';
 
 class PhoneView extends StatelessWidget {
   PhoneView({Key? key}) : super(key: key);

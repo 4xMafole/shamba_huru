@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import 'package:shamba_huru/custom_widgets/scaled_list.dart';
 import 'package:shamba_huru/models/list_item.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
-import 'package:shamba_huru/views/onboard_view.dart';
+import 'package:shamba_huru/views/onboarding/onboard_view.dart';
 
 class LanguageView extends StatelessWidget {
   LanguageView({Key? key}) : super(key: key);
