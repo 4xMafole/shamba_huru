@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_onboard/flutter_onboard.dart';
 import 'package:get/get.dart';
+import 'package:shamba_huru/controllers/onboard_controller.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/views/login_view.dart';
 
 class OnboardView extends StatelessWidget {
   OnboardView({Key? key}) : super(key: key);
 
-  final PageController _pageController = PageController();
+  final OnboardController _controller = Get.put(OnboardController());
 
   @override
   Widget build(BuildContext context) {
@@ -15,8 +16,8 @@ class OnboardView extends StatelessWidget {
       body: OnBoard(
         imageHeight: 200,
         imageWidth: 200,
-        pageController: _pageController,
-        onBoardData: onBoardData,
+        pageController: _controller.pageController,
+        onBoardData: _controller.onBoardData,
         titleStyles: TextStyle(
           color: AppColor.deepGreen,
           fontSize: 18,
@@ -25,7 +26,7 @@ class OnboardView extends StatelessWidget {
         ),
         descriptionStyles: TextStyle(
           fontSize: 16,
-          color: AppColor.brownish,
+          color: AppColor.pullmanBrown,
         ),
         pageIndicatorStyle: PageIndicatorStyle(
           width: 100,
@@ -77,7 +78,7 @@ class OnboardView extends StatelessWidget {
 
   void _onNextTap(OnBoardState onBoardState) {
     if (!onBoardState.isLastPage) {
-      _pageController.animateToPage(
+      _controller.pageController.animateToPage(
         onBoardState.page + 1,
         duration: const Duration(milliseconds: 250),
         curve: Curves.easeInOutSine,
@@ -87,23 +88,3 @@ class OnboardView extends StatelessWidget {
     }
   }
 }
-
-final List<OnBoardModel> onBoardData = [
-  const OnBoardModel(
-    title: "Set your own goals and get better",
-    description: "Goal support your motivation and inspire you to work harder",
-    imgUrl: "assets/images/tractor.png",
-  ),
-  const OnBoardModel(
-    title: "Track your progress with statistics",
-    description:
-        "Analyse personal result with detailed chart and numerical values",
-    imgUrl: 'assets/images/farm.png',
-  ),
-  const OnBoardModel(
-    title: "Create photo comparision and share your results",
-    description:
-        "Take before and after photos to visualize progress and get the shape that you dream about",
-    imgUrl: 'assets/images/cow.png',
-  ),
-];

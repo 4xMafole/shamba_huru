@@ -27,14 +27,20 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
+  animate_do: ^2.1.0
+  argon_buttons_flutter: ^1.1.0
   cupertino_icons: ^1.0.2
   flutter:
     sdk: flutter
+  flutter_local_notifications: ^9.4.0
   flutter_native_splash: ^2.1.1
   flutter_onboard: ^2.0.0
   flutter_svg: ^1.0.3
   get: ^4.6.1
   google_fonts: ^2.3.1
+  intl_phone_number_input: ^0.7.0+2
+  reactive_forms: ^11.0.1
+  reactive_pinput: ^0.2.0
 
 flutter_native_splash:
   color: "#0c8049"
