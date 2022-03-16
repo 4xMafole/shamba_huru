@@ -21,6 +21,7 @@ class OtpView extends StatelessWidget {
       child: ReactiveForm(
         formGroup: _controller.otpForm,
         child: Scaffold(
+          extendBody: true,
           body: Stack(
             children: <Widget>[
               SingleChildScrollView(
