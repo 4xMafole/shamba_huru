@@ -4,6 +4,7 @@ import 'package:shamba_huru/views/language_view.dart';
 import 'package:shamba_huru/views/login_view.dart';
 import 'package:shamba_huru/views/onboard_view.dart';
 import 'package:shamba_huru/views/otp_view.dart';
+import 'package:shamba_huru/views/phone_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.green,
       ),
-      home: OtpView(),
+      home: PhoneView(),
     );
   }
 }
