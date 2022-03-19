@@ -33,9 +33,14 @@ class MapFarmView extends StatelessWidget {
         title: Text(
           "Plot My Farm",
         ),
-        leading: Icon(
-          Icons.arrow_back_ios_rounded,
-          color: Colors.white,
+        leading: GestureDetector(
+          onTap: () {
+            Get.back();
+          },
+          child: Icon(
+            Icons.arrow_back_ios_rounded,
+            color: Colors.white,
+          ),
         ),
       ),
       body: GetX<MapFarmController>(
