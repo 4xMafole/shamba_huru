@@ -9,6 +9,7 @@ import 'package:reactive_forms/reactive_forms.dart';
 import 'package:reactive_pinput/reactive_pinput.dart';
 import 'package:shamba_huru/controllers/otp_controller.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
+import 'package:shamba_huru/views/weather/map_farm_view.dart';
 
 class OtpView extends StatelessWidget {
   OtpView({Key? key}) : super(key: key);
@@ -158,6 +159,7 @@ class OtpView extends StatelessWidget {
           onPressed: form.valid
               ? () {
                   // todo: Call Api to verify otp code
+                  Get.to(MapFarmView());
                   debugPrint("Submitted otp: " + _controller.getOtp());
                 }
               : null,
