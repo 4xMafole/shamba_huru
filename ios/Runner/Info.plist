@@ -16,6 +16,10 @@
 		<string>shamba_huru</string>
 		<key>CFBundlePackageType</key>
 		<string>APPL</string>
+		<key>NSLocationAlwaysUsageDescription</key>
+    	<string>Your location is required for our services to work</string>
+    	<key>NSLocationWhenInUseUsageDescription</key>
+    	<string>Your location is required for our services to work</string>
 		<key>CFBundleShortVersionString</key>
 		<string>$(FLUTTER_BUILD_NAME)</string>
 		<key>CFBundleSignature</key>
