@@ -31,7 +31,7 @@ class MapFarmView extends StatelessWidget {
         elevation: 0,
         centerTitle: true,
         title: Text(
-          "Current Location",
+          "Plot My Farm",
         ),
         leading: Icon(
           Icons.arrow_back_ios_rounded,

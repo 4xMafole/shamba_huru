@@ -77,9 +77,8 @@ class MapFarmController extends GetxController {
       polygonId: PolygonId(polygonIdVal),
       points: polygonLatLon!,
       strokeWidth: 2,
-      consumeTapEvents: true,
-      strokeColor: AppColor.pullmanBrown,
-      fillColor: AppColor.pullmanBrown.withOpacity(0.15),
+      strokeColor: AppColor.paleGreen,
+      fillColor: AppColor.paleGreen.withOpacity(0.15),
     ));
   }
 }
