@@ -10,6 +10,7 @@ import 'package:loading_indicator/loading_indicator.dart';
 import 'package:shamba_huru/custom_widgets/app_loading_indicator.dart';
 
 import 'package:shamba_huru/utils/app_colors.dart';
+import 'package:shamba_huru/views/crop_selection_view.dart';
 import 'package:shamba_huru/views/weather/map_farm_controller.dart';
 
 class MapFarmView extends StatelessWidget {
@@ -48,28 +49,37 @@ class MapFarmView extends StatelessWidget {
           builder: (context) {
             if (!_controller.isLoading.value) {
               return FadeIn(
-                child: GoogleMap(
-                  zoomControlsEnabled: false,
-                  padding: const EdgeInsets.all(0),
-                  trafficEnabled: true,
-                  polygons: _controller.polygons.value.toSet(),
-                  mapType: MapType.hybrid,
-                  initialCameraPosition: CameraPosition(
-                    target: LatLng(
-                        _controller.map.value.lat!, _controller.map.value.lon!),
-                    zoom: 17.151926040649414,
-                  ),
-                  onMapCreated: (GoogleMapController controller) {
-                    _googleController.complete(controller);
-                  },
-                  onTap: (point) {
-                    if (_controller.isPolygon.value) {
-                      _controller.polygonLatLon?.add(point);
-                      _controller.polygonLatLon
-                          ?.removeWhere((element) => element == LatLng(0, 0));
-                      _controller.setPolygon();
-                    }
-                  },
+                child: Stack(
+                  children: [
+                    GoogleMap(
+                      zoomControlsEnabled: false,
+                      padding: const EdgeInsets.all(0),
+                      trafficEnabled: true,
+                      polygons: _controller.polygons.value.toSet(),
+                      mapType: MapType.hybrid,
+                      initialCameraPosition: CameraPosition(
+                        target: LatLng(_controller.map.value.lat!,
+                            _controller.map.value.lon!),
+                        zoom: 17.151926040649414,
+                      ),
+                      onMapCreated: (GoogleMapController controller) {
+                        _googleController.complete(controller);
+                      },
+                      onTap: (point) {
+                        if (_controller.isPolygon.value) {
+                          _controller.polygonLatLon?.add(point);
+                          _controller.polygonLatLon?.removeWhere(
+                              (element) => element == LatLng(0, 0));
+                          _controller.setPolygon();
+                        }
+                      },
+                    ),
+                    Positioned(
+                      right: 30,
+                      bottom: 30,
+                      child: _verifyButton(),
+                    ),
+                  ],
                 ),
               );
             } else {
@@ -79,5 +89,24 @@ class MapFarmView extends StatelessWidget {
             }
           }),
     );
+  }
+
+  Widget _verifyButton() {
+    if (!_controller.isLoading.value) {
+      return ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          shape: const CircleBorder(),
+          primary: AppColor.paleGreen,
+          padding: const EdgeInsets.all(10.0),
+        ),
+        onPressed: () {
+          //Send to crop selection view
+          Get.to(CropSelectionView());
+        },
+        child: const Icon(Icons.arrow_forward_rounded, size: 30.0),
+      );
+    } else {
+      return Container();
+    }
   }
 }
