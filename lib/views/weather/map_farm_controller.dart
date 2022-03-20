@@ -6,14 +6,13 @@ import 'package:geocoding/geocoding.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:shamba_huru/models/map_farm.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 
 class MapFarmController extends GetxController {
-  RxString city = "Loading...".obs;
-  RxString country = "Loading...".obs;
-  RxDouble lat = 0.0.obs;
-  RxDouble lon = 0.0.obs;
   RxBool isLoading = true.obs;
+
+  Rx<MapFarm> map = MapFarm().obs;
 
   Rx<HashSet<Polygon>> polygons = HashSet<Polygon>().obs;
 
@@ -24,7 +23,7 @@ class MapFarmController extends GetxController {
 
   @override
   void onInit() {
-    // Here you can fetch you product from server
+    initiliazeMap();
     getLocationData();
     super.onInit();
   }
@@ -60,10 +59,10 @@ class MapFarmController extends GetxController {
           await placemarkFromCoordinates(position.latitude, position.longitude);
       Placemark place = placemarks[0];
 
-      city.value = place.locality!;
-      country.value = place.country!;
-      lon.value = position.longitude;
-      lat.value = position.latitude;
+      map.value.city = place.locality!;
+      map.value.country = place.country!;
+      map.value.lon = position.longitude;
+      map.value.lat = position.latitude;
 
       isLoading.value = false;
     } catch (e) {
@@ -80,5 +79,12 @@ class MapFarmController extends GetxController {
       strokeColor: AppColor.paleGreen,
       fillColor: AppColor.paleGreen.withOpacity(0.15),
     ));
+  }
+
+  void initiliazeMap() {
+    map.value.city = "";
+    map.value.country = "";
+    map.value.lat = 0.0;
+    map.value.lon = 0.0;
   }
 }

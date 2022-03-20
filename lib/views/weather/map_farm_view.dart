@@ -55,8 +55,8 @@ class MapFarmView extends StatelessWidget {
                   polygons: _controller.polygons.value.toSet(),
                   mapType: MapType.hybrid,
                   initialCameraPosition: CameraPosition(
-                    target:
-                        LatLng(_controller.lat.value, _controller.lon.value),
+                    target: LatLng(
+                        _controller.map.value.lat!, _controller.map.value.lon!),
                     zoom: 17.151926040649414,
                   ),
                   onMapCreated: (GoogleMapController controller) {
