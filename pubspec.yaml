@@ -30,6 +30,7 @@ dependencies:
   animate_do: ^2.1.0
   argon_buttons_flutter: ^1.1.0
   cupertino_icons: ^1.0.2
+  filter_list: ^1.0.1
   flutter:
     sdk: flutter
   flutter_local_notifications: ^9.4.0
