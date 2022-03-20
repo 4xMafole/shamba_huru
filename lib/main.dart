@@ -2,7 +2,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:shamba_huru/views/crop_selection_view.dart';
+import 'package:shamba_huru/views/content/content_view.dart';
+import 'package:shamba_huru/views/weather/crop_selection_view.dart';
 import 'package:shamba_huru/views/onboarding/language_view.dart';
 import 'package:shamba_huru/views/authentication/login_view.dart';
 import 'package:shamba_huru/views/onboarding/onboard_view.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: CropSelectionView(),
+      home: ContentView(),
     );
   }
 }
