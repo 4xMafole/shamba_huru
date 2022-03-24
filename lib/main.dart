@@ -2,7 +2,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/views/content/content_view.dart';
+import 'package:shamba_huru/views/content/home_view.dart';
 import 'package:shamba_huru/views/weather/crop_selection_view.dart';
 import 'package:shamba_huru/views/onboarding/language_view.dart';
 import 'package:shamba_huru/views/authentication/login_view.dart';
@@ -29,8 +31,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.green,
+        iconTheme: IconThemeData(
+          color: AppColor.pullmanBrown,
+        ),
       ),
-      home: LanguageView(),
+      home: HomeView(),
     );
   }
 }

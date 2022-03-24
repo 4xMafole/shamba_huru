@@ -6,6 +6,7 @@ class Crop {
   String date;
   double priceEarly;
   double priceLast;
+
   Crop({
     required this.name,
     required this.location,
@@ -79,6 +80,14 @@ class Crop {
         o.date == date &&
         o.priceEarly == priceEarly &&
         o.priceLast == priceLast;
+  }
+
+  double pricePercentage() {
+    if (priceEarly != 0.0) {
+      return ((priceLast - priceEarly) / priceEarly) * 100;
+    } else {
+      return (priceLast / 1) * 100;
+    }
   }
 
   @override

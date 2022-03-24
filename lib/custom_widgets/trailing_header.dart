@@ -12,7 +12,16 @@ class TrailingHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        Text(
+          "- - - - - - -",
+          style: TextStyle(
+            color: AppColor.pullmanBrown.withOpacity(0.4),
+            fontWeight: FontWeight.bold,
+            fontSize: 20,
+          ),
+        ),
         Container(
           padding: EdgeInsets.all(10),
           decoration: BoxDecoration(
@@ -28,7 +37,7 @@ class TrailingHeader extends StatelessWidget {
           ),
         ),
         Text(
-          "- - - - - - - - - - -",
+          "- - - - - - -",
           style: TextStyle(
             color: AppColor.pullmanBrown.withOpacity(0.4),
             fontWeight: FontWeight.bold,
