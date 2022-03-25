@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 
 class ProfileView extends StatelessWidget {
-  const ProfileView({Key? key}) : super(key: key);
+  const ProfileView(ScrollController value, {Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

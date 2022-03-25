@@ -11,7 +11,8 @@ import 'package:shamba_huru/models/crop.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 
 class HomeView extends StatelessWidget {
-  HomeView({Key? key}) : super(key: key);
+  ScrollController sController;
+  HomeView(this.sController, {Key? key}) : super(key: key);
 
   final HomeController _controller = Get.put(HomeController());
 
@@ -44,6 +45,8 @@ class HomeView extends StatelessWidget {
         ],
       ),
       body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        controller: sController,
         child: Container(
           padding: EdgeInsets.all(15),
           child: Column(

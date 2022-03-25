@@ -1,5 +1,7 @@
+import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hidable/hidable.dart';
 import 'package:shamba_huru/controllers/content_controller.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/views/content/feeds_view.dart';
@@ -14,25 +16,31 @@ class ContentView extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     final ContentController controller =
         Get.put(ContentController(), permanent: false);
-    return SafeArea(
+    return Obx(
+      () => SafeArea(
         child: Scaffold(
-      extendBody: true,
-      bottomNavigationBar: customNav(size, controller),
-      body: Obx(() => IndexedStack(
-            index: controller.tabIndex.value,
-            children: [
-              HomeView(),
-              FeedView(),
-              ProfileView(),
-            ],
-          )),
-    ));
+          extendBody: true,
+          bottomNavigationBar: Offstage(
+            offstage: !controller.isVisible.value,
+            child: customNav(size, controller),
+          ),
+          body: Obx(() => IndexedStack(
+                index: controller.tabIndex.value,
+                children: [
+                  HomeView(controller.scrollController1.value),
+                  FeedView(controller.scrollController2.value),
+                  ProfileView(controller.scrollController3.value),
+                ],
+              )),
+        ),
+      ),
+    );
   }
 
   Widget customNav(Size size, ContentController controller) {
     return Container(
       margin: EdgeInsets.all(20),
-      height: size.width * .155,
+      height: controller.isVisible.value ? size.width * .155 : 0,
       decoration: BoxDecoration(
         color: Colors.white,
         boxShadow: [

@@ -10,4 +10,5 @@ class AppColor {
   static Color paleBrown = Color(0xFFA17E45); //New Info
   static Color orangeYellow = Color(0xFFFFD485);
   static Color black = Color(0xFF000000);
+  static Color grey = Color(0xDDEBEBEB);
 }

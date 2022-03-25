@@ -1,40 +1,33 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
+import 'package:like_button/like_button.dart';
+import 'package:shamba_huru/controllers/feeds_controller.dart';
+import 'package:shamba_huru/custom_widgets/post_card.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 
 class FeedView extends StatelessWidget {
-  const FeedView({Key? key}) : super(key: key);
+  ScrollController sController;
+  FeedView(this.sController, {Key? key}) : super(key: key);
+
+  final FeedsController _controller = Get.put(FeedsController());
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        Expanded(
-          child: Center(
-            child: SizedBox(
-              height: 100,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset(
-                    "assets/images/coming_soon.png",
-                    width: 60,
-                    height: 60,
-                    color: AppColor.paleBlue,
-                  ),
-                  Text(
-                    'FEEDS COMING SOON',
-                    style: TextStyle(
-                      color: AppColor.paleBlue,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
-        ),
-      ],
-    ));
+      extendBody: true,
+      body: ListView.builder(
+        controller: sController,
+        physics: BouncingScrollPhysics(),
+        itemCount: _controller.posData.value.posts.length,
+        itemBuilder: ((context, index) {
+          return PostCard(
+            postIndex: index,
+            controller: _controller,
+          );
+        }),
+      ),
+    );
   }
 }
