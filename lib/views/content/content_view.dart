@@ -6,7 +6,7 @@ import 'package:shamba_huru/controllers/content/content_controller.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/views/content/feeds_view.dart';
 import 'package:shamba_huru/views/content/home_view.dart';
-import 'package:shamba_huru/views/content/profile_view.dart';
+import 'package:shamba_huru/views/content/profile/profile_view.dart';
 
 class ContentView extends StatelessWidget {
   ContentView({Key? key}) : super(key: key);
