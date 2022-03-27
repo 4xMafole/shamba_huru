@@ -36,6 +36,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.8.2"
+  babstrap_settings_screen:
+    dependency: "direct main"
+    description:
+      name: babstrap_settings_screen
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.1.1"
   badges:
     dependency: "direct main"
     description:

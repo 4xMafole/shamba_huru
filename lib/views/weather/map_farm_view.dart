@@ -11,7 +11,7 @@ import 'package:shamba_huru/custom_widgets/app_loading_indicator.dart';
 
 import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/views/weather/crop_selection_view.dart';
-import 'package:shamba_huru/controllers/map_farm_controller.dart';
+import 'package:shamba_huru/controllers/auth/map_farm_controller.dart';
 
 class MapFarmView extends StatelessWidget {
   MapFarmView({Key? key}) : super(key: key);

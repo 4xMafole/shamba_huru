@@ -2,7 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hidable/hidable.dart';
-import 'package:shamba_huru/controllers/content_controller.dart';
+import 'package:shamba_huru/controllers/content/content_controller.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/views/content/feeds_view.dart';
 import 'package:shamba_huru/views/content/home_view.dart';

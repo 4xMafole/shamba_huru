@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:getwidget/components/list_tile/gf_list_tile.dart';
-import 'package:shamba_huru/controllers/crop_selection_controller.dart';
+import 'package:shamba_huru/controllers/auth/crop_selection_controller.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/views/content/content_view.dart';
 import 'package:shamba_huru/views/content/home_view.dart';

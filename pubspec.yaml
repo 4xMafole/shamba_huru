@@ -29,6 +29,7 @@ environment:
 dependencies:
   animate_do: ^2.1.0
   argon_buttons_flutter: ^1.1.0
+  babstrap_settings_screen: ^0.1.1
   badges: ^2.0.2
   cupertino_icons: ^1.0.2
   filter_list: ^1.0.1

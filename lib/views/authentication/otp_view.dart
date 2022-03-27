@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 import 'package:pinput/pin_put/pin_put.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:reactive_pinput/reactive_pinput.dart';
-import 'package:shamba_huru/controllers/otp_controller.dart';
+import 'package:shamba_huru/controllers/auth/otp_controller.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/views/weather/map_farm_view.dart';
 

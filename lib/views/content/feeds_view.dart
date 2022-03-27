@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:like_button/like_button.dart';
-import 'package:shamba_huru/controllers/feeds_controller.dart';
-import 'package:shamba_huru/custom_widgets/post_card.dart';
+import 'package:shamba_huru/controllers/content/feeds_controller.dart';
+import 'package:shamba_huru/custom_widgets/cards/post_card.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 
 class FeedView extends StatelessWidget {

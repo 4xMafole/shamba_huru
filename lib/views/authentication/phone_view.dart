@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
-import 'package:shamba_huru/controllers/phone_controller.dart';
+import 'package:shamba_huru/controllers/auth/phone_controller.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/views/authentication/otp_view.dart';
 

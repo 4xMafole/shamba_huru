@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:like_button/like_button.dart';
-import 'package:shamba_huru/controllers/feeds_controller.dart';
+import 'package:shamba_huru/controllers/content/feeds_controller.dart';
+import 'package:shamba_huru/custom_widgets/texts/expert_label.dart';
+import 'package:shamba_huru/custom_widgets/texts/text_01.dart';
+import 'package:shamba_huru/custom_widgets/texts/username_text.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 
 class PostCard extends StatelessWidget {
@@ -51,33 +54,17 @@ class PostCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         //? Username
-                        Text(
-                          controller
+                        UsernameText(
+                          username: controller
                               .posData.value.posts[postIndex].user.username,
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 16,
-                            color: AppColor.pullmanBrown,
-                          ),
                         ),
                         SizedBox(
                           width: 10,
                         ),
                         //? Verification Badge
                         controller.posData.value.posts[postIndex].user.isExpert!
-                            ? Container(
-                                padding: EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                  color: AppColor.deepGreen,
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                child: Text(
-                                  "Expert",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 12,
-                                  ),
-                                ),
+                            ? ExpertLabel(
+                                labelText: "Expert",
                               )
                             : Container(),
                       ],
@@ -91,22 +78,14 @@ class PostCard extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             //? Location
-                            Text(
-                              controller
+                            Text01(
+                              text: controller
                                   .posData.value.posts[postIndex].location,
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: AppColor.paleBrown.withOpacity(0.5),
-                              ),
                             ),
                             //? Date and Time
-                            Text(
-                              controller.posData.value.posts[postIndex].time,
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: AppColor.paleBrown.withOpacity(0.5),
-                              ),
-                            ),
+                            Text01(
+                                text: controller
+                                    .posData.value.posts[postIndex].time),
                           ],
                         ),
                       ],

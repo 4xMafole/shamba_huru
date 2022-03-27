@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_onboard/flutter_onboard.dart';
 import 'package:get/get.dart';
-import 'package:shamba_huru/controllers/onboard_controller.dart';
+import 'package:shamba_huru/controllers/auth/onboard_controller.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/views/authentication/login_view.dart';
 

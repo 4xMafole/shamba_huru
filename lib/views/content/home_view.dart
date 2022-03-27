@@ -2,11 +2,11 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
-import 'package:shamba_huru/controllers/home_controller.dart';
-import 'package:shamba_huru/custom_widgets/promo_card.dart';
+import 'package:shamba_huru/controllers/content/home_controller.dart';
+import 'package:shamba_huru/custom_widgets/cards/promo_card.dart';
 import 'package:shamba_huru/custom_widgets/scrollable_widget.dart';
 import 'package:shamba_huru/custom_widgets/trailing_header.dart';
-import 'package:shamba_huru/custom_widgets/weather_card.dart';
+import 'package:shamba_huru/custom_widgets/cards/weather_card.dart';
 import 'package:shamba_huru/models/crop.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 
