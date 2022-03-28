@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/views/authentication/login_view.dart';
 import 'package:shamba_huru/views/authentication/phone_view.dart';
+import 'package:shamba_huru/views/content/profile/edit_profile_view.dart';
 import 'package:shamba_huru/views/onboarding/language_view.dart';
 
 class SettingsView extends StatelessWidget {
@@ -45,7 +46,7 @@ class SettingsView extends StatelessWidget {
             SettingsGroup(
               items: [
                 SettingsItem(
-                  onTap: () {},
+                  onTap: () => Get.to(EditProfileView()),
                   icons: CupertinoIcons.profile_circled,
                   iconStyle: IconStyle(),
                   titleStyle: TextStyle(
