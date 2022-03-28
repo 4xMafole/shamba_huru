@@ -6,6 +6,7 @@ import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/views/content/content_view.dart';
 import 'package:shamba_huru/views/content/feeds_view.dart';
 import 'package:shamba_huru/views/content/home_view.dart';
+import 'package:shamba_huru/views/content/profile/edit_profile_view.dart';
 import 'package:shamba_huru/views/weather/crop_selection_view.dart';
 import 'package:shamba_huru/views/onboarding/language_view.dart';
 import 'package:shamba_huru/views/authentication/login_view.dart';
