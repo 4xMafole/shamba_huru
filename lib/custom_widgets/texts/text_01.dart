@@ -16,7 +16,6 @@ class Text01 extends StatelessWidget {
     return Text(
       text,
       style: TextStyle(
-        fontWeight: FontWeight.bold,
         fontSize: font,
         color: AppColor.paleBrown.withOpacity(0.5),
       ),

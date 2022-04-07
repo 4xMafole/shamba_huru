@@ -4,7 +4,8 @@ import 'package:shamba_huru/custom_widgets/texts/expert_label.dart';
 import 'package:shamba_huru/custom_widgets/texts/text_01.dart';
 import 'package:shamba_huru/custom_widgets/texts/username_text.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
-import 'package:shamba_huru/views/content/profile/settings_view.dart';
+import 'package:shamba_huru/views/content/profile/options/my_farm_view.dart';
+import 'package:shamba_huru/views/content/profile/options/settings/settings_view.dart';
 import 'package:shamba_huru/views/weather/crop_selection_view.dart';
 import 'package:shamba_huru/views/weather/map_farm_view.dart';
 
@@ -128,7 +129,7 @@ class ProfileView extends StatelessWidget {
           child: Column(
             children: [
               GestureDetector(
-                onTap: () => Get.to(MapFarmView()),
+                onTap: () => Get.to(MyFarmView()),
                 child: ListTile(
                   title: Text(
                     "My Farm",
@@ -164,7 +165,7 @@ class ProfileView extends StatelessWidget {
                 color: AppColor.grey,
               ),
               GestureDetector(
-                onTap: () => Get.to(SettingsView()),
+                onTap: () => Get.to(() => SettingsView()),
                 child: ListTile(
                   title: Text(
                     "Settings",

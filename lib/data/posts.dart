@@ -1,7 +1,7 @@
 import 'package:shamba_huru/models/post.dart';
 import 'package:shamba_huru/models/user.dart';
 
-class postsData {
+class PostsData {
   List<Post> posts = [
     Post(
       user: UserPost(

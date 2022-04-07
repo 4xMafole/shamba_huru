@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:shamba_huru/data/posts.dart';
 
 class FeedsController extends GetxController {
-  final Rx<postsData> posData = postsData().obs;
+  final Rx<PostsData> posData = PostsData().obs;
   final RxBool isFull = false.obs;
 
   void updateDesc(bool updateBool, int index) {

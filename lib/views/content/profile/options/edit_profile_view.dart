@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:reactive_forms/reactive_forms.dart';
 import 'package:shamba_huru/controllers/content/profile/edit_profile_controller.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
-import 'package:shamba_huru/views/content/profile/settings_view.dart';
+import 'package:shamba_huru/views/content/profile/options/settings/settings_view.dart';
 
 class EditProfileView extends StatelessWidget {
   EditProfileView({Key? key}) : super(key: key);
