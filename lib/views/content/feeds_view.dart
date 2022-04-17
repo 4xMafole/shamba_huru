@@ -15,7 +15,22 @@ class FeedView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+      statusBarColor: AppColor.deepGreen,
+      statusBarIconBrightness: Brightness.light,
+    ));
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: AppColor.deepGreen,
+        elevation: 0,
+        title: Text(
+          "Feeds",
+          style: TextStyle(
+            color: Colors.white,
+          ),
+        ),
+        centerTitle: true,
+      ),
       extendBody: true,
       body: ListView.builder(
         controller: sController,

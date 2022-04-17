@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:flutter/services.dart';
 import 'package:shamba_huru/custom_widgets/texts/expert_label.dart';
 import 'package:shamba_huru/custom_widgets/texts/text_01.dart';
 import 'package:shamba_huru/custom_widgets/texts/username_text.dart';
@@ -14,18 +15,33 @@ class ProfileView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Center(
-      child: Column(
-        children: [
-          SizedBox(
-            height: 75,
-          ),
-          _profile(),
-          _myDetails(),
-        ],
-      ),
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+      statusBarColor: AppColor.deepGreen,
+      statusBarIconBrightness: Brightness.light,
     ));
+    return Scaffold(
+        appBar: AppBar(
+          backgroundColor: AppColor.deepGreen,
+          elevation: 0,
+          title: Text(
+            "Profile",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+          ),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Column(
+            children: [
+              SizedBox(
+                height: 75,
+              ),
+              _profile(),
+              _myDetails(),
+            ],
+          ),
+        ));
   }
 
   _profile() => Stack(

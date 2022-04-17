@@ -1,5 +1,6 @@
 import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:hidable/hidable.dart';
 import 'package:shamba_huru/controllers/content/content_controller.dart';
@@ -16,6 +17,10 @@ class ContentView extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     final ContentController controller =
         Get.put(ContentController(), permanent: false);
+    SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark.copyWith(
+      statusBarColor: AppColor.deepGreen,
+      statusBarIconBrightness: Brightness.light,
+    ));
     return Obx(
       () => SafeArea(
         child: Scaffold(

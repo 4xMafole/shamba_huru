@@ -21,28 +21,17 @@ class HomeView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarColor: Colors.transparent,
+          statusBarColor: AppColor.deepGreen,
         ),
-        backgroundColor: Colors.transparent,
+        backgroundColor: AppColor.deepGreen,
         elevation: 0,
-        actions: [
-          Badge(
-            position: BadgePosition.topEnd(top: 15, end: 12),
-            badgeColor: AppColor.paleBrown,
-            elevation: 0,
-            badgeContent: null,
-            child: IconButton(
-              iconSize: 30,
-              icon: Icon(
-                Icons.notifications,
-                color: AppColor.paleGreen.withOpacity(0.5),
-              ),
-              onPressed: () {
-                //! show notification bottom sheet
-              },
-            ),
+        title: Text(
+          "Home",
+          style: TextStyle(
+            color: Colors.white,
           ),
-        ],
+        ),
+        centerTitle: true,
       ),
       body: SingleChildScrollView(
         physics: BouncingScrollPhysics(),
