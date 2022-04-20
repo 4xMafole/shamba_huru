@@ -38,4 +38,6 @@ class PostsData {
       isFull: false,
     ),
   ];
+
+  // List<Post> posts = [];
 }

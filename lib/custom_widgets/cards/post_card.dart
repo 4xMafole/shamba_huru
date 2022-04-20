@@ -8,7 +8,7 @@ import 'package:shamba_huru/custom_widgets/texts/username_text.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 
 class PostCard extends StatelessWidget {
-  final FeedsController controller;
+  var controller;
   final int postIndex;
   PostCard({Key? key, required this.postIndex, required this.controller})
       : super(key: key);

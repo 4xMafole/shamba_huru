@@ -47,12 +47,14 @@ dependencies:
   google_fonts: ^2.3.1
   google_maps_flutter: ^2.1.2
   hidable: ^1.0.2
+  infinite_widgets: ^2.0.0
   intl_phone_number_input: ^0.7.0+2
   like_button: ^2.0.4
   loading_indicator: ^3.0.3
   money_formatter: ^0.0.3
   reactive_forms: ^11.0.1
   reactive_pinput: ^0.2.0
+  shimmer: ^2.0.0
 
 flutter_native_splash:
   color: "#0c8049"
