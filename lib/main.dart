@@ -6,7 +6,7 @@ import 'package:shamba_huru/utils/app_colors.dart';
 import 'package:shamba_huru/views/content/content_view.dart';
 import 'package:shamba_huru/views/content/main_feeds_view.dart';
 import 'package:shamba_huru/views/content/home_view.dart';
-import 'package:shamba_huru/views/content/profile/my_feeds_view.dart';
+import 'package:shamba_huru/views/content/profile/profile_view.dart';
 import 'package:shamba_huru/views/content/profile/options/edit_profile_view.dart';
 import 'package:shamba_huru/views/content/profile/options/my_farm_view.dart';
 import 'package:shamba_huru/views/weather/crop_selection_view.dart';

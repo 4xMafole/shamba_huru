@@ -17,9 +17,9 @@ import 'package:shimmer/shimmer.dart';
 
 import '../../../custom_widgets/app_loading_indicator.dart';
 
-class MyFeedsView extends StatelessWidget {
+class ProfileView extends StatelessWidget {
   final ScrollController scrollController;
-  MyFeedsView({Key? key, required this.scrollController}) : super(key: key);
+  ProfileView({Key? key, required this.scrollController}) : super(key: key);
 
   final MyFeedsController _controller = Get.put(MyFeedsController());
 
@@ -43,7 +43,7 @@ class MyFeedsView extends StatelessWidget {
             )
           ],
           title: Text(
-            "My Feeds",
+            "Profile",
             style: TextStyle(
               color: Colors.white,
             ),
