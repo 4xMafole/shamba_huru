@@ -5,9 +5,9 @@ import 'package:get/get.dart';
 import 'package:hidable/hidable.dart';
 import 'package:shamba_huru/controllers/content/content_controller.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
-import 'package:shamba_huru/views/content/feeds_view.dart';
+import 'package:shamba_huru/views/content/main_feeds_view.dart';
 import 'package:shamba_huru/views/content/home_view.dart';
-import 'package:shamba_huru/views/content/profile/profile_view.dart';
+import 'package:shamba_huru/views/content/profile/my_feeds_view.dart';
 
 class ContentView extends StatelessWidget {
   ContentView({Key? key}) : super(key: key);
@@ -33,8 +33,10 @@ class ContentView extends StatelessWidget {
                 index: controller.tabIndex.value,
                 children: [
                   HomeView(controller.scrollController1.value),
-                  FeedView(controller.scrollController2.value),
-                  ProfileView(controller.scrollController3.value),
+                  MainFeedView(controller.scrollController2.value),
+                  MyFeedsView(
+                    scrollController: controller.scrollController3.value,
+                  ),
                 ],
               )),
         ),

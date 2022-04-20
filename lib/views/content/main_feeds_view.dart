@@ -7,9 +7,9 @@ import 'package:shamba_huru/controllers/content/feeds_controller.dart';
 import 'package:shamba_huru/custom_widgets/cards/post_card.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
 
-class FeedView extends StatelessWidget {
+class MainFeedView extends StatelessWidget {
   ScrollController sController;
-  FeedView(this.sController, {Key? key}) : super(key: key);
+  MainFeedView(this.sController, {Key? key}) : super(key: key);
 
   final FeedsController _controller = Get.put(FeedsController());
 

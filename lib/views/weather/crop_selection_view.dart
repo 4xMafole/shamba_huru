@@ -89,11 +89,9 @@ class CropSelectionView extends StatelessWidget {
         title: Text(
           "My Crops",
         ),
-        leading: GestureDetector(
-          onTap: () {
-            Get.back();
-          },
-          child: Icon(
+        leading: IconButton(
+          onPressed: (() => Get.back()),
+          icon: Icon(
             Icons.arrow_back_ios_rounded,
             color: Colors.white,
           ),
