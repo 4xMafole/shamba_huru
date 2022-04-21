@@ -141,7 +141,7 @@ class AddMyFeedsView extends StatelessWidget {
                           onTap: form.valid
                               ? () {
                                   //TODO: Form is valid post data to the database and redirect user to the feeds page.
-                                  Get.off(MyFeedsListView());
+                                  Get.back();
                                 }
                               : null,
                           child: Container(

@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
           color: AppColor.pullmanBrown,
         ),
       ),
-      home: AddMyFeedsView(),
+      home: ContentView(),
     );
   }
 }

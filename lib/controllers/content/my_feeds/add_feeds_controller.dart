@@ -26,7 +26,6 @@ class AddFeedController extends GetxController {
     List<File> images = await ChristianPickerImage.pickImages(maxImages: 1);
     feedImage.value = images[0].path;
     print("IMAGE PATH: " + images[0].path);
-    Get.back();
   }
 
   Future pickImage() async {
