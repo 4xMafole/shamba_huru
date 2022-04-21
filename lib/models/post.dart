@@ -2,9 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 
-import 'package:shamba_huru/models/user.dart';
+import 'package:shamba_huru/models/user_post.dart';
 
 class Post {
+  int postId;
   UserPost user;
   String location;
   String time;
@@ -14,7 +15,9 @@ class Post {
   String description;
   int likes;
   bool isFull;
+
   Post({
+    required this.postId,
     required this.user,
     required this.location,
     required this.time,
@@ -27,6 +30,7 @@ class Post {
   });
 
   Post copyWith({
+    required int postId,
     required UserPost user,
     required String location,
     required String time,
@@ -38,6 +42,7 @@ class Post {
     required bool isFull,
   }) {
     return Post(
+      postId: postId,
       user: user,
       location: location,
       time: time,
@@ -52,6 +57,7 @@ class Post {
 
   Post merge(Post model) {
     return Post(
+      postId: model.postId,
       user: model.user,
       location: model.location,
       time: model.time,
@@ -66,7 +72,8 @@ class Post {
 
   Map<String, dynamic> toMap() {
     return {
-      'user': user,
+      'postID': postId,
+      'user': user.toMap(),
       'location': location,
       'time': time,
       'tags': tags,
@@ -80,6 +87,7 @@ class Post {
 
   factory Post.fromMap(Map<String, dynamic> map) {
     return Post(
+      postId: map['postID'],
       user: UserPost.fromMap(map['user']),
       location: map['location'],
       time: map['time'],
@@ -98,7 +106,7 @@ class Post {
 
   @override
   String toString() {
-    return 'Post(user: $user, location: $location, time: $time, tags: $tags, photo: $photo, title: $title, description: $description, likes: $likes, isFull: $isFull)';
+    return 'Post(postId: $postId, user: $user, location: $location, time: $time, tags: $tags, photo: $photo, title: $title, description: $description, likes: $likes, isFull: $isFull)';
   }
 
   @override
@@ -106,6 +114,7 @@ class Post {
     if (identical(this, other)) return true;
 
     return other is Post &&
+        other.postId == postId &&
         other.user == user &&
         other.location == location &&
         other.time == time &&
@@ -119,7 +128,8 @@ class Post {
 
   @override
   int get hashCode {
-    return user.hashCode ^
+    return postId.hashCode ^
+        user.hashCode ^
         location.hashCode ^
         time.hashCode ^
         tags.hashCode ^

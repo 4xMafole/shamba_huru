@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 
 import '../../../data/posts.dart';
 import '../../../models/post.dart';
-import '../../../models/user.dart';
+import '../../../models/user_post.dart';
 
 class MyFeedsController extends GetxController {
   final Rx<PostsData> posData = PostsData().obs;
@@ -34,6 +34,7 @@ class MyFeedsController extends GetxController {
       for (var i = initialIndex; i < finalIndex; ++i) {
         posData.value.posts.add(
           Post(
+            postId: 32,
             user: UserPost(
               userId: "$i",
               username: "Scolastica Milanzi",

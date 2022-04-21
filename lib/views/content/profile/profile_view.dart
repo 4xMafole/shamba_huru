@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter/services.dart';
 import 'package:infinite_widgets/infinite_widgets.dart';
+import 'package:shamba_huru/controllers/content/profile/follow_controller.dart';
 import 'package:shamba_huru/controllers/content/profile/my_feeds_controller.dart';
 import 'package:shamba_huru/custom_widgets/texts/expert_label.dart';
 import 'package:shamba_huru/custom_widgets/texts/text_01.dart';
 import 'package:shamba_huru/custom_widgets/texts/username_text.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
+import 'package:shamba_huru/views/content/profile/follow_view.dart';
 import 'package:shamba_huru/views/content/profile/options/edit_profile_view.dart';
 import 'package:shamba_huru/views/content/profile/options/my_farm_view.dart';
 import 'package:shamba_huru/views/content/profile/options/settings/settings_view.dart';
@@ -23,6 +25,7 @@ class ProfileView extends StatelessWidget {
   ProfileView({Key? key, required this.scrollController}) : super(key: key);
 
   final MyFeedsController _controller = Get.put(MyFeedsController());
+  final FollowController _followController = Get.put(FollowController());
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +122,16 @@ class ProfileView extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
-                      counter("10", "Following"),
+                      InkWell(
+                        onTap: () {
+                          Get.to(() => FollowView(
+                                index: 0,
+                              ));
+                        },
+                        child: counter(
+                            "${_followController.followData.value.following.length}",
+                            "Following"),
+                      ),
                       InkWell(
                           onTap: () {
                             final ScrollController scrollController1 =
@@ -129,7 +141,16 @@ class ProfileView extends StatelessWidget {
                                 ));
                           },
                           child: counter("50", "Feeds")),
-                      counter("600", "Followers"),
+                      InkWell(
+                        onTap: () {
+                          Get.to(() => FollowView(
+                                index: 1,
+                              ));
+                        },
+                        child: counter(
+                            "${_followController.followData.value.followers.length}",
+                            "Followers"),
+                      ),
                     ],
                   ),
                   SizedBox(height: 16),

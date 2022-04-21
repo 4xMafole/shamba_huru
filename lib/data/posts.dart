@@ -1,9 +1,10 @@
 import 'package:shamba_huru/models/post.dart';
-import 'package:shamba_huru/models/user.dart';
+import 'package:shamba_huru/models/user_post.dart';
 
 class PostsData {
   List<Post> posts = [
     Post(
+      postId: 1,
       user: UserPost(
         userId: "1",
         username: "Scolastica Milanzi",
@@ -21,6 +22,7 @@ class PostsData {
       isFull: false,
     ),
     Post(
+      postId: 2,
       user: UserPost(
         userId: "2",
         username: "Josephat Hassan",
