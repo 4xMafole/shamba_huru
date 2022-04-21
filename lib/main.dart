@@ -17,6 +17,8 @@ import 'package:shamba_huru/views/authentication/otp_view.dart';
 import 'package:shamba_huru/views/authentication/phone_view.dart';
 import 'package:shamba_huru/views/weather/map_farm_view.dart';
 
+import 'views/content/profile/my_feeds/add_my_feeds_view.dart';
+
 void main() {
   if (defaultTargetPlatform == TargetPlatform.android) {
     AndroidGoogleMapsFlutter.useAndroidViewSurface = true;
@@ -39,7 +41,7 @@ class MyApp extends StatelessWidget {
           color: AppColor.pullmanBrown,
         ),
       ),
-      home: ContentView(),
+      home: AddMyFeedsView(),
     );
   }
 }

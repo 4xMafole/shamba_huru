@@ -22,11 +22,9 @@ class EditProfileView extends StatelessWidget {
         ),
         backgroundColor: AppColor.deepGreen,
         elevation: 0,
-        leading: GestureDetector(
-          onTap: () {
-            Get.back();
-          },
-          child: Icon(
+        leading: IconButton(
+          onPressed: (() => Get.back()),
+          icon: Icon(
             Icons.arrow_back_ios_rounded,
             color: Colors.white,
           ),
