@@ -8,7 +8,7 @@ import 'package:shamba_huru/custom_widgets/texts/expert_label.dart';
 import 'package:shamba_huru/custom_widgets/texts/text_01.dart';
 import 'package:shamba_huru/custom_widgets/texts/username_text.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
-import 'package:shamba_huru/views/content/profile/feeds_list_view.dart';
+import 'package:shamba_huru/views/content/profile/options/edit_profile_view.dart';
 import 'package:shamba_huru/views/content/profile/options/my_farm_view.dart';
 import 'package:shamba_huru/views/content/profile/options/settings/settings_view.dart';
 import 'package:shamba_huru/views/weather/crop_selection_view.dart';
@@ -16,6 +16,7 @@ import 'package:shamba_huru/views/weather/map_farm_view.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../../../custom_widgets/app_loading_indicator.dart';
+import 'my_feeds/my_feeds_list_view.dart';
 
 class ProfileView extends StatelessWidget {
   final ScrollController scrollController;
@@ -123,7 +124,7 @@ class ProfileView extends StatelessWidget {
                           onTap: () {
                             final ScrollController scrollController1 =
                                 ScrollController();
-                            Get.to(() => FeedsListView(
+                            Get.to(() => MyFeedsListView(
                                   scrollController: scrollController1,
                                 ));
                           },
@@ -138,10 +139,13 @@ class ProfileView extends StatelessWidget {
           ),
           Align(
             alignment: Alignment.center,
-            child: CircleAvatar(
-              backgroundColor: AppColor.paleBrown,
-              radius: 45,
-              backgroundImage: AssetImage('assets/images/profile.jpg'),
+            child: InkWell(
+              onTap: () => Get.to(() => EditProfileView()),
+              child: CircleAvatar(
+                backgroundColor: AppColor.paleBrown,
+                radius: 45,
+                backgroundImage: AssetImage('assets/images/profile.jpg'),
+              ),
             ),
           ),
         ],
@@ -216,7 +220,7 @@ class ProfileView extends StatelessWidget {
                 onTap: () {
                   final ScrollController scrollController = ScrollController();
 
-                  Get.to(() => FeedsListView(
+                  Get.to(() => MyFeedsListView(
                         postIndex: index,
                         scrollController: scrollController,
                       ));

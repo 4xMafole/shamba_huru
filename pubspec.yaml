@@ -31,6 +31,7 @@ dependencies:
   argon_buttons_flutter: ^1.1.0
   babstrap_settings_screen: ^0.1.1
   badges: ^2.0.2
+  christian_picker_image: ^2.0.0
   cupertino_icons: ^1.0.2
   filter_list: ^1.0.1
   flutter:
@@ -52,6 +53,7 @@ dependencies:
   like_button: ^2.0.4
   loading_indicator: ^3.0.3
   money_formatter: ^0.0.3
+  permission_handler: ^9.2.0
   reactive_forms: ^11.0.1
   reactive_pinput: ^0.2.0
   shimmer: ^2.0.0
