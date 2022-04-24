@@ -179,7 +179,7 @@ class CropSelectionView extends StatelessWidget {
           onPressed: () {
             //! Send user to home screen
             //Send to homeview
-            Get.to(ContentView());
+            Get.offAll(ContentView());
           },
           child: const Icon(Icons.arrow_forward_rounded, size: 30.0),
         ),
