@@ -60,7 +60,30 @@ class HomeView extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              _sortableTable(context),
+              _controller.cropData.value.crops.isNotEmpty
+                  ? Center(
+                      child: SizedBox(
+                        height: 100,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              "assets/images/price_chart.png",
+                              width: 60,
+                              height: 60,
+                            ),
+                            Text(
+                              'No recent market activities',
+                              style: TextStyle(
+                                color: Colors.grey,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
+                  : _sortableTable(context),
             ],
           ),
         ),
@@ -92,7 +115,7 @@ class HomeView extends StatelessWidget {
             sortAscending: _controller.isAscending.value,
             sortColumnIndex: _controller.sortColumnIndex!.value,
             columns: getColumns(_controller.columns),
-            rows: getRows(_controller.crops),
+            rows: getRows(_controller.cropData.value.crops),
           ),
         ),
       ),
@@ -146,17 +169,19 @@ class HomeView extends StatelessWidget {
 
   void onSort(int columnIndex, bool ascending) {
     if (columnIndex == 0) {
-      _controller.crops.sort(
+      _controller.cropData.value.crops.sort(
           (crop1, crop2) => compareString(ascending, crop1.name, crop2.name));
     } else if (columnIndex == 1) {
-      _controller.crops.sort((crop1, crop2) =>
+      _controller.cropData.value.crops.sort((crop1, crop2) =>
           compareString(ascending, crop1.location, crop2.location));
     } else if (columnIndex == 2) {
-      _controller.crops.sort((crop1, crop2) => compareString(
+      _controller.cropData.value.crops.sort((crop1, crop2) => compareString(
           ascending, '${(crop1.priceLast)}', '${crop2.priceLast}'));
     } else if (columnIndex == 3) {
-      _controller.crops.sort((crop1, crop2) => compareString(ascending,
-          '${crop1.pricePercentage()}', '${crop2.pricePercentage()}'));
+      _controller.cropData.value.crops.sort((crop1, crop2) => compareString(
+          ascending,
+          '${crop1.pricePercentage()}',
+          '${crop2.pricePercentage()}'));
     }
 
     _controller.updateIndices(columnIndex, ascending);
