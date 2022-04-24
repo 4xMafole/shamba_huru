@@ -32,17 +32,41 @@ class MainFeedView extends StatelessWidget {
         centerTitle: true,
       ),
       extendBody: true,
-      body: ListView.builder(
-        controller: sController,
-        physics: BouncingScrollPhysics(),
-        itemCount: _controller.posData.value.posts.length,
-        itemBuilder: ((context, index) {
-          return PostCard(
-            postIndex: index,
-            controller: _controller,
-          );
-        }),
-      ),
+      body: _controller.posData.value.posts.isEmpty
+          ? Center(
+              child: SizedBox(
+                height: 100,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Image.asset(
+                      "assets/images/news_feed.png",
+                      width: 60,
+                      height: 60,
+                      color: Colors.grey,
+                    ),
+                    Text(
+                      'No recent feeds',
+                      style: TextStyle(
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          : ListView.builder(
+              controller: sController,
+              physics: BouncingScrollPhysics(),
+              itemCount: _controller.posData.value.posts.length,
+              itemBuilder: ((context, index) {
+                return PostCard(
+                  postIndex: index,
+                  controller: _controller,
+                );
+              }),
+            ),
     );
   }
 }

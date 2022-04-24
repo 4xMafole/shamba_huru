@@ -60,7 +60,7 @@ class HomeView extends StatelessWidget {
               SizedBox(
                 height: 30,
               ),
-              _controller.cropData.value.crops.isNotEmpty
+              _controller.cropData.value.crops.isEmpty
                   ? Center(
                       child: SizedBox(
                         height: 100,
