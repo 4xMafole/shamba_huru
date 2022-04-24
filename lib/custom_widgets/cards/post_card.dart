@@ -6,6 +6,7 @@ import 'package:shamba_huru/custom_widgets/texts/expert_label.dart';
 import 'package:shamba_huru/custom_widgets/texts/text_01.dart';
 import 'package:shamba_huru/custom_widgets/texts/username_text.dart';
 import 'package:shamba_huru/utils/app_colors.dart';
+import 'package:shamba_huru/views/content/profile/profile_view.dart';
 
 class PostCard extends StatelessWidget {
   var controller;
@@ -38,11 +39,17 @@ class PostCard extends StatelessWidget {
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                CircleAvatar(
-                  backgroundColor: AppColor.paleBrown,
-                  radius: 30,
-                  backgroundImage: AssetImage(
-                      controller.posData.value.posts[postIndex].user.photo!),
+                InkWell(
+                  onTap: () {
+                    //TODO: Take current user to the postie profile
+                    Get.to(() => ProfileView(scrollController: null));
+                  },
+                  child: CircleAvatar(
+                    backgroundColor: AppColor.paleBrown,
+                    radius: 30,
+                    backgroundImage: AssetImage(
+                        controller.posData.value.posts[postIndex].user.photo!),
+                  ),
                 ),
                 SizedBox(
                   width: 10,
@@ -88,11 +95,26 @@ class PostCard extends StatelessWidget {
                                     .posData.value.posts[postIndex].time),
                           ],
                         ),
+                        SizedBox(
+                          width: 20,
+                        ),
                       ],
                     ),
                   ],
                 ),
                 Expanded(child: Container()),
+                //TODO: Make this text clickable to follow and unfollow people (Suggested posts)
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Follow",
+                    style: TextStyle(
+                      color: AppColor.paleGreen,
+                    ),
+                  ),
+                ),
+                Expanded(child: Container()),
+
                 //? More Option Icon
                 Icon(
                   Icons.more_vert_rounded,

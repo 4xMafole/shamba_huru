@@ -21,7 +21,7 @@ import '../../../custom_widgets/app_loading_indicator.dart';
 import 'my_feeds/my_feeds_list_view.dart';
 
 class ProfileView extends StatelessWidget {
-  final ScrollController scrollController;
+  final ScrollController? scrollController;
   ProfileView({Key? key, required this.scrollController}) : super(key: key);
 
   final MyFeedsController _controller = Get.put(MyFeedsController());
