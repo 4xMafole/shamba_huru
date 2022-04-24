@@ -35,16 +35,50 @@ class MyFarmView extends StatelessWidget {
         centerTitle: true,
       ),
       floatingActionButton: _addButton(context),
-      body: ListView.builder(
-        physics: BouncingScrollPhysics(),
-        itemCount: _controller.farmData.value.farmDetails.length,
-        itemBuilder: ((context, index) {
-          return _farmContent(
-            context: context,
-            farmIndex: index,
-          );
-        }),
-      ),
+      body: _controller.farmData.value.farmDetails.isEmpty
+          ? GestureDetector(
+              onTap: () {
+                _controller.clearValues();
+                _editBottomModal(
+                    widget: _editFarmDetails(
+                  context,
+                  isNew: true,
+                ));
+              },
+              child: Center(
+                child: SizedBox(
+                  height: 100,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                        "assets/images/farm_2.png",
+                        width: 60,
+                        height: 60,
+                        color: AppColor.paleGreen,
+                      ),
+                      Text(
+                        'Add New Farm',
+                        style: TextStyle(
+                          color: AppColor.paleGreen,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            )
+          : ListView.builder(
+              physics: BouncingScrollPhysics(),
+              itemCount: _controller.farmData.value.farmDetails.length,
+              itemBuilder: ((context, index) {
+                return _farmContent(
+                  context: context,
+                  farmIndex: index,
+                );
+              }),
+            ),
     );
   }
 
