@@ -42,7 +42,7 @@ class MyApp extends StatelessWidget {
           color: AppColor.pullmanBrown,
         ),
       ),
-      home: LanguageView(),
+      home: ContentView(),
     );
   }
 }
