@@ -258,7 +258,7 @@ class ProfileView extends StatelessWidget {
               );
             },
             itemCount: _controller.posData.value.posts.length,
-            hasNext: _controller.posData.value.posts.length < 200,
+            hasNext: _controller.posData.value.posts.length > 200,
             nextData: _controller.loadNextData,
           ),
         );
