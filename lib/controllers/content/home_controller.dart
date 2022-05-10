@@ -7,7 +7,7 @@ class HomeController extends GetxController {
   Rx<CropData> cropData = CropData().obs;
   RxInt? sortColumnIndex = 0.obs;
   RxBool isAscending = false.obs;
-  final columns = ['Crop', 'Region', 'Tshs', '%'];
+  final columns = ['Crop', 'Region', 'Tshs', '%']; //columns to be updated
 
   @override
   void onInit() {
